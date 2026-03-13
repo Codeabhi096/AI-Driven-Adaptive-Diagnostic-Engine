@@ -5,22 +5,22 @@ A production-ready **1-Dimension Adaptive Testing** prototype built with FastAPI
 ---
 ## 🎥 Demo Video
 
-[![Watch Demo](screenshots/1.JPG)](https://youtu.be/z3cFEFnqozI)
+[![Watch Demo](Screenshots/1.JPG)](https://youtu.be/z3cFEFnqozI)
 
 
 ## 📸 Screenshots
 
 ### 1. Start Test
-![Start Test](screenshots/1.JPG)
+![Start Test](Screenshots/1.JPG)
 
 ### 2. Question Screen
-![Question Screen](screenshots/2.JPG)
+![Question Screen](Screenshots/2.JPG)
 
 ### 3. Answer Feedback
-![Answer Feedback](screenshots/3.JPG)
+![Answer Feedback](Screenshots/3.JPG)
 
 ### 4. Final Results & Study Plan
-![Results](screenshots/4.JPG)
+![Results](Screenshots/4.JPG)
 
 
 
