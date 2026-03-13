@@ -59,8 +59,9 @@ async def _get_session_or_404(session_id: str) -> dict:
 def _session_to_domain(doc: dict) -> UserSessionDB:
     """Map a raw MongoDB dict back to the UserSessionDB Pydantic model."""
     answers = [AnswerRecord(**a) for a in doc.get("answers", [])]
-    return UserSessionDB(
-        _id=str(doc["_id"]),
+    # Build a plain dict — avoids PyObjectId validation issues with Pydantic v2
+    return UserSessionDB.model_construct(
+        id=str(doc["_id"]),
         user_id=doc["user_id"],
         ability_score=doc["ability_score"],
         current_question_id=doc.get("current_question_id"),

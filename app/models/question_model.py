@@ -4,20 +4,21 @@ These are used for API I/O validation and MongoDB document shaping.
 """
 
 from __future__ import annotations
-from typing import List, Optional
-from pydantic import BaseModel, Field, field_validator
+from typing import List, Optional, Any
+from pydantic import BaseModel, Field, field_validator, GetCoreSchemaHandler
+from pydantic_core import core_schema
 from bson import ObjectId
 
 
 class PyObjectId(str):
-    """Custom type to serialise MongoDB ObjectId as a plain string in JSON."""
+    """Custom type to serialise MongoDB ObjectId as a plain string in JSON — Pydantic v2 compatible."""
 
     @classmethod
-    def __get_validators__(cls):
-        yield cls.validate
+    def __get_pydantic_core_schema__(cls, source_type: Any, handler: GetCoreSchemaHandler):
+        return core_schema.no_info_plain_validator_function(cls.validate)
 
     @classmethod
-    def validate(cls, value):
+    def validate(cls, value: Any) -> str:
         if not ObjectId.is_valid(str(value)):
             raise ValueError(f"Invalid ObjectId: {value}")
         return str(value)

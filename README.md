@@ -3,6 +3,26 @@
 A production-ready **1-Dimension Adaptive Testing** prototype built with FastAPI, MongoDB, and the Anthropic Claude API. The system dynamically selects questions based on each student's evolving ability estimate, then generates a personalised study plan when the test concludes.
 
 ---
+## 🎥 Demo Video
+
+[![Watch Demo](screenshots/1.JPG)](https://youtu.be/z3cFEFnqozI)
+
+
+## 📸 Screenshots
+
+### 1. Start Test
+![Start Test](screenshots/1.JPG)
+
+### 2. Question Screen
+![Question Screen](screenshots/2.JPG)
+
+### 3. Answer Feedback
+![Answer Feedback](screenshots/3.JPG)
+
+### 4. Final Results & Study Plan
+![Results](screenshots/4.JPG)
+
+
 
 ## Table of Contents
 
